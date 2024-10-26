@@ -1,0 +1,153 @@
+/* Fondo de animación rainbow para el body */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 20%, #fad0c4 40%, #fbc2eb 60%, #a6c1ee 80%);
+    background-size: 300% 300%;
+    animation: gradientBG 15s ease infinite; /* Animación del gradiente de fondo */
+}
+
+/* Animación de gradiente rainbow */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Manteniendo el diseño del contenedor sin sombras ni bordes */
+.container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+   
+}
+
+/* Ajustes adicionales para darle un diseño mejorado a los elementos */
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Fondo degradado suave */
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-5px);
+}
+
+button:active {
+    background-color: #3e8e41;
+    transform: translateY(0);
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: skewX(-45deg);
+    transition: left 0.5s;
+}
+
+button:hover::after {
+    left: 150%;
+}
+
+/* Mejorando la visualización del tablero sin sombras ni bordes adicionales */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 130px);
+    grid-template-rows: repeat(3, 130px);
+    gap: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0); /* Fondo degradado suave */
+}
+
+/* Celdas mejoradas visualmente sin bordes ni sombras */
+.cell {
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #fafafa, #eaeaea); /* Fondo degradado suave */
+}
+
+.cell.X {
+    color: #E74C3C; /* Rojo vibrante para la X */
+    font-weight: bold;
+}
+
+.cell.O {
+    color: #3498DB; /* Azul fresco para la O */
+    font-weight: bold;
+}
+
+.leaderboard-container {
+    width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7693af 0%, #e1e8ed 100%); /* Fondo degradado suave */
+}
+
+#leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#leaderboard th, #leaderboard td {
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+#leaderboard th {
+    background-color: #8e9eab;
+    color: white;
+    font-size: 1.1rem;
+}
+
+#leaderboard td {
+    color: #333;
+    background-color: #f0f4f8; /* Fondo claro sin bordes */
+    transition: background-color 0.3s;
+}
+
+#leaderboard tr:hover td {
+    background-color: #dfe6e9;
+}

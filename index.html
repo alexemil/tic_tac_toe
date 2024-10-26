@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Controles del Juego</h2>
+            <button id="restartButton">Volver a Jugar</button>
+            <button id="easyMode">Dificultad Normal</button>
+            <button id="hardMode">Dificultad Difícil</button>
+            <div id="status"></div>
+        </div>
+        <div class="board" id="board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+        <div class="leaderboard-container">
+            <h3>Mejores Tiempos</h3>
+            <table id="leaderboard">
+                <thead>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Jugador</th>
+                        <th>Tiempo (s)</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardBody">
+                    <!-- Los registros se añadirán dinámicamente aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
